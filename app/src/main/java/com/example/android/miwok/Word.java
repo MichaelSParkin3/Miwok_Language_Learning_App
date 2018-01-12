@@ -17,17 +17,30 @@ public class Word {
     //Default translation for the word
     private String mDefaultTranslation;
 
+    //Image resource ID
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
+
 
     //Constructor for the words
-    public Word (String defaultTranslation, String miwokTranslation){
+    public Word(String defaultTranslation, String miwokTranslation) {
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
+    }
+
+    //Constructor for the words
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+        mMiwokTranslation = miwokTranslation;
+        mDefaultTranslation = defaultTranslation;
+        mImageResourceId = imageResourceId;
     }
 
     //Set the miwok translation of the word
     public void setMiwokTranslation(String miwokTranslation) {
         this.mMiwokTranslation = miwokTranslation;
     }
+
     //Get the miwok translation of the word
     public String getMiwokTranslation() {
         return mMiwokTranslation;
@@ -38,8 +51,22 @@ public class Word {
     public void setDefaultTranslation(String defaultTranslation) {
         this.mDefaultTranslation = defaultTranslation;
     }
+
     //Get the default translation of the word
     public String getDefaultTranslation() {
         return mDefaultTranslation;
+    }
+
+    //Get the image resource ID
+    public int getmImageResourceId() {
+        return mImageResourceId;
+    }
+
+    public boolean hasImage() {
+        if (mImageResourceId != NO_IMAGE_PROVIDED) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
