@@ -9,6 +9,7 @@ import android.content.Context;
 
 public class Word {
 
+    private int mAudioResourceId;
 
     //Miwok translation for the word
     private String mMiwokTranslation;
@@ -22,18 +23,27 @@ public class Word {
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
+    //
+    public int getAudioResourceId() {
+        return mAudioResourceId;
+    }
+
+
+
 
     //Constructor for the words
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     //Constructor for the words
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     //Set the miwok translation of the word
